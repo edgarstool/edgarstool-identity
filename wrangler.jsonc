@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "edgars-tools-identity",
+  "main": ".output/server/index.mjs",
+  "compatibility_date": "2025-07-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".output/public",
+    "binding": "ASSETS",
+  },
+  "observability": { "enabled": true },
+  "routes": [
+    // 綁定正式網域後啟用（DNS 需先指向此 Cloudflare 帳號）
+    // { "pattern": "auth.edgars.tools", "custom_domain": true }
+  ],
+  "vars": {
+    // 非機密設定值；機密請以 `wrangler secret put` 或 GitHub Actions Secrets 提供
+    "PUBLIC_ORIGIN": "https://auth.edgars.tools",
+    "MCP_OAUTH_AUDIENCE": "authenticated",
+  },
+}

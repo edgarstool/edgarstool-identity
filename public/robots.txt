@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /account
+Disallow: /authorize
+Disallow: /callback
+Disallow: /auth/
+
+Sitemap: https://auth.edgars.tools/sitemap.xml
